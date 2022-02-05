@@ -26,12 +26,14 @@ const parseReplay = async (buf) => {
     throw new Error("not a replay");
   }
 
+  let containerSize;
+
   if (version === Version.remastered) {
     // @todo support scr sections, specifically ShieldBattery POV addition
     bl.consume(4);
   } else if (version === Version.titanReactor) {
     const scrSection = await block(bl, 4);
-    const containerSize = await block(bl, 4);
+    containerSize = (await block(bl, 4)).readUInt32LE(0);
   }
 
   const rawHeader = await block(bl, 0x279);
@@ -49,6 +51,7 @@ const parseReplay = async (buf) => {
     header,
     rawCmds,
     chk,
+    containerSize
   };
 };
 
