@@ -23,10 +23,7 @@ const getChkChunks = (buf) => {
     const chunkDefinition = chunkTypes.find((cname) => cname === name);
     const size = bl.readInt32LE(pos + 4);
 
-    if (!chunkDefinition || size === 0) {
-      if (size === 0) {
-        console.log(`zero chunk ${name}`);
-      }
+    if (!chunkDefinition) {
       pos += size + 8;
       continue;
     }
@@ -46,7 +43,6 @@ const getChkChunks = (buf) => {
           const newBuf = Buffer.concat([buffer, previous.slice(buffer.length)]);
           chunks.splice(chunks.indexOf(previous), 1, [name, newBuf]);
         }
-        //@todo else?
       } else {
         chunks.splice(chunks.indexOf(previous), 1, [name, buffer]);
       }

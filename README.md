@@ -12,8 +12,8 @@
  * TODO: Retain the SCR blocks at the end of the file
 
 ### Exposed functions
-- `parseReplay` parses both SCR and 1.16 replays
-- `CommandsStream` allows streamed command parsing, useful for AI Bots where hundres of commands per frame are comon.
+- `parseReplay` parses both SCR and 1.16 replays.
+- `CommandsStream` streamed command parsing.
 - `convertReplay` downgrades SCR replays
 - `Version` an enum. 0 = broodwar. 1 = remastered. 2 = titanReactor.
 - `ChkDowngrader` optional but necessary atm for downgrading CHK chunks.

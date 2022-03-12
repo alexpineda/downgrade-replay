@@ -76,7 +76,7 @@ const bufToCommand = (id, data) => {
     case CMDS.CHAT.id:
       return {
         senderSlot: data.readUInt8(0),
-        //@todo figure out length
+        //FIXME: figure out length
         message: cstring(data.slice(1, 80)),
       };
 

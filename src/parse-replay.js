@@ -29,7 +29,7 @@ const parseReplay = async (buf) => {
   let containerSize;
 
   if (version === Version.remastered) {
-    // @todo support scr sections, specifically ShieldBattery POV addition
+    // FIXME: support scr sections, specifically ShieldBattery POV addition
     bl.consume(4);
   } else if (version === Version.titanReactor) {
     const scrSection = await block(bl, 4);
@@ -51,7 +51,7 @@ const parseReplay = async (buf) => {
     header,
     rawCmds,
     chk,
-    containerSize
+    containerSize,
   };
 };
 
