@@ -1,6 +1,6 @@
 {
   "name": "downgrade-replay",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Downgrades SCR replays",
   "main": "src/index.js",
   "author": "Alex Pineda <alexpineda@fastmail.com",

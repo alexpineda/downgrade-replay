@@ -6,7 +6,7 @@ const { Version } = require("../common");
 const { uint32 } = require("../../util/alloc");
 
 class Orchestrate {
-  constructor(chunks, opts) {
+  constructor(chunks) {
     this.chunks = Object.freeze(chunks);
 
     const versionDowngrader = new VersionDowngrader();

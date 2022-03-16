@@ -11,7 +11,11 @@ class ChkDowngrader {
     const chunks = getChkChunks(buf);
     const orchestrate = new Orchestrate(chunks, this.opts);
 
-    return orchestrate.downgrade();
+    if (orchestrate.isSCR) {
+      return orchestrate.downgrade();
+    } else {
+      return buf;
+    }
   }
 }
 
